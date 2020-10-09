@@ -5,7 +5,7 @@ server = Flask(__name__)
 
 @server.route("/")
 def hello():
-    return render_template("index.html", content="123")
+    return render_template("index.html", content="Hello World!")
 
 
 if __name__ == "__main__":
