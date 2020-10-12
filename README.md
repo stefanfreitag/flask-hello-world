@@ -12,7 +12,7 @@ The page shows e.g. the IP address.
 
 ```sh
 REV_TAG=$(git log -1 --pretty=format:%h)
-docker build -t flask-hello-world:$REV_TAG . .
+docker build -t flask-hello-world:$REV_TAG .
 ```
 
 - Listing the available images
