@@ -3,14 +3,16 @@
 A simple _Hello World_ web application.
 In the background it utilizes Python3 and Flask.
 
-The web server starts at port 5000 and exposes a HTML page under _/_.
+The web server starts by default at port 5000 and exposes a basic HTML page under _/_.
+The page shows e.g. the IP address.
 
 ## Building the image
 
 - Check out the code from the git repository and run.
 
 ```sh
-docker build -t flask-hello-world .
+REV_TAG=$(git log -1 --pretty=format:%h)
+docker build -t flask-hello-world:$REV_TAG . .
 ```
 
 - Listing the available images
@@ -30,5 +32,5 @@ docker run -d -p 5000:5000 flask-hello-world:latest
 
 ## Links
 
-- [Python.org](https://www.python.org/)
 - [Flask](https://flask.palletsprojects.com/en/1.1.x/)
+- [Python.org](https://www.python.org/)

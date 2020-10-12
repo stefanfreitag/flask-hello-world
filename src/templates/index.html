@@ -7,11 +7,17 @@
   <body>
     <header>
       <div class="container">
-        <h1 class="logo">Flask Demo App</h1>
+        <h1 class="logo">Flask Hello World</h1>
       </div>
     </header>
     <div class="container">
-     {{ content }}
+        <h2>{{ greeting }}</h2>
+    </div>
+    <div class="container">
+        Basic information:
+        <ul>
+            <li>IP Address: {{ ipAddress }}</li>
+        </ul>
     </div>
   </body>
 </html >

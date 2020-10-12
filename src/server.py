@@ -1,11 +1,18 @@
 from flask import Flask, render_template
+import socket
 
 server = Flask(__name__)
 
 
 @server.route("/")
 def hello():
-    return render_template("index.html", content="Hello World!")
+    hostname = socket.gethostname()
+    ip_addr = socket.gethostbyname(hostname)
+    content = {"greeting": "Hello World!", "ipAddress": ip_addr}
+    return render_template(
+        "index.html",
+        **content,
+    )
 
 
 if __name__ == "__main__":
