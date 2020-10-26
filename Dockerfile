@@ -1,12 +1,12 @@
 # First stage
-FROM python:3.8 AS builder
+FROM python:3.9 AS builder
 COPY requirements.txt .
 
 # Install dependencies to the local user directory
 RUN pip install --user -r requirements.txt
 
 # Second stage
-FROM python:3.8-slim
+FROM python:3.9-slim
 LABEL maintainer="stefan@stefreitag.de"
 WORKDIR /code
 
