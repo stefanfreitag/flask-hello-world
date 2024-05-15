@@ -1,12 +1,12 @@
 # First stage
-FROM python:3.10 AS builder
+FROM python:3.12 AS builder
 COPY requirements.txt .
 
 # Install dependencies to the local user directory
 RUN pip install --user -r requirements.txt
 
 # Second stage
-FROM python:3.10-slim
+FROM python:3.12-slim
 LABEL maintainer="stefan@stefreitag.de"
 WORKDIR /code
 
